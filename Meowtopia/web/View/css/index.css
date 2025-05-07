@@ -1,0 +1,762 @@
+.top-bar {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding: 0 30px;
+    align-items: center;
+    z-index: 10;
+}
+
+.icon-btn {
+    margin-right: 30px;
+}
+
+.currency {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    position: relative;
+}
+
+.coin-icon {
+    height: 80px;
+    width: auto;
+    z-index: 2;
+    position: relative;
+    margin-right: -10px; /* pulls coin on top of bar */
+}
+
+.coin-bar {
+    background-color: #F4B840;
+    color: #000000;
+    font-weight: bold;
+    padding: 6px 16px 6px 28px; /* extra left padding to adjust for overlap */
+    border-radius: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    min-width: 200%;
+    left: 60%;
+    z-index: 1;
+    position: relative;
+}
+
+.progress-bars {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.level {
+    height: 25px;
+    background: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 170px;
+    border: 2px solid black;
+    margin-left: 10px !important;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    border-right: 2px solid black;
+}
+
+.happiness-bar{
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+
+    .health-bar {
+        background-color: #f54254;
+    }
+}
+
+.lightning-bar{
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+
+    .energy-bar {
+        background-color: #ffd700;
+    }
+}
+
+.cat-container {
+    position: absolute;
+    bottom: 15%;
+    left: 55%;
+    transform: translateX(-50%);
+}
+
+.cat-container img {
+    width: 60%;
+}
+
+.bottom-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+}
+
+.round-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+}
+
+.circle-btn img {
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.CheckInButton{
+    width: 61px;
+    height: 57px;
+    background-color: transparent;
+    border: 0px;
+
+    img {
+        width: 175%;
+        height: 150%;
+
+    }
+}
+
+.DailyButton{
+    width: 61px;
+    height: 57px;
+    background-color: transparent;
+    border: 0px;
+}
+
+.Shop{
+    width: 66px;
+    height: 57px;
+    background-color: transparent;
+    border: 0px;
+}
+
+.circle-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.daily-mission-section {
+    display: none;
+    position: absolute;
+    top: 55%;
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    font-family: cursive;
+}
+
+/*        for daily mission panel css*/
+.mission-panel {
+    background: rgba(255, 246, 220, 0.95);
+    border: 3px solid #d2b48c;
+    border-radius: 20px;
+    padding: 20px;
+    width: 320px;
+    height: 500px; /* <-- Add a fixed height */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.mission-header {
+    position: relative;
+    text-align: center;
+}
+
+
+.mission-panel h2 {
+    margin-bottom: 15px;
+    color: #5c3a1a;
+    justify-content: space-between;
+    font-size: 30px;
+}
+
+.close-btn {
+    position: absolute;
+    right: 0;
+    top: 37%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #5c3a1a;
+    padding: 0;
+    margin: 0;
+}
+
+.task {
+    background: #fff;
+    border: 2px solid #e0c9a6;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-title {
+    font-weight: bold;
+    color: #5c3a1a;
+}
+
+.claim-btn {
+    background: #f9d56e;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #5c3a1a;
+}
+
+.progress-reward {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 5px;
+    color: #5c3a1a;
+}
+
+.claim-all-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: #f9d56e;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #5c3a1a;
+    cursor: pointer;
+}
+
+.task-container {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px; /* space before CLAIM ALL */
+    padding-right: 10px;
+}
+/* Apply to Webkit-based browsers (Chrome, Edge, Safari) */
+.task-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.task-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+}
+
+.task-container::-webkit-scrollbar-thumb {
+    background-color: #ffd56e;
+    border-radius: 4px;
+    border: 2px solid #f8e7c0;
+}
+
+.task-container::-webkit-scrollbar-thumb:hover {
+    background-color: #c9a76d;
+}
+
+
+/*        for Shop panel css*/
+.shop-panel {
+    display: none;  /* Hidden by default */
+    position: absolute;
+    top: 55%;
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background: rgba(255, 246, 220, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 320px;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    backdrop-filter: blur(5px);
+    height: 500px;
+    flex-direction: column;
+    border: 3px solid #d2b48c;
+    font-family: cursive;
+
+}
+
+
+.shop-item {
+    position: relative;  /*Needed to position the tooltip inside the item */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    min-height: 60px;
+    border: 2px solid #e0c9a6;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.item-image {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #5c3a1a;
+}
+
+.item-price {
+    font-size: 12px;
+    color: #5c3a1a;
+}
+
+.buy-btn {
+    background: #ffd56e;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #3d2b1f;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+/* Container for the tab buttons */
+.category-tabs {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+    padding: 0 12px;
+}
+
+/* Common tab style */
+.tab-btn {
+    background-color: #ffe28a;
+    border: none;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 8px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    color: #5a4033;
+    transition: all 0.2s ease-in-out;
+    
+    margin-right: 8px;
+    width: -webkit-fill-available;
+}
+
+/* Hover effect */
+.tab-btn:hover {
+    background-color: #ffecb3;
+}
+
+.tab-btn.active {
+    background: rgba(255, 246, 220, 0.95);
+    color: #d48d00;
+    position: relative;
+    z-index: 1;
+    font-size: 22px;
+    padding: 0px 50px;
+    box-shadow: inset 0 -3px 0 #d8b05e;
+}
+
+
+#shop-items {
+    overflow-y: auto;
+    max-height: 380px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding-right: 10px;
+}
+
+#shop-items::-webkit-scrollbar {
+    width: 8px;
+}
+
+#shop-items::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+}
+
+#shop-items::-webkit-scrollbar-thumb {
+    background: #ffd56e;
+    border-radius: 4px;
+}
+
+#shop-items::-webkit-scrollbar-thumb:hover {
+    background-color: #c9a76d;
+}
+
+.shop-header {
+    position: relative;
+    text-align: center;
+}
+
+.shop-title {
+    font-size: 30px;
+    color: #5c3a1a;
+    margin: 0;
+    /*    font-weight: bold;*/
+}
+
+.shop-close-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #5c3a1a;
+    padding: 0;
+    margin: 0;
+}
+
+.hover-tooltip {
+    position: absolute;
+/*    bottom: -3%;   Position it above the item */
+    left: 50%;
+    transform: translateX(-50%);  /*Center horizontally */
+    background: #fff7e6;
+    padding: 6px 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    font-size: 12px;
+    color: #5c3a1a;
+}
+
+.shop-item:hover .hover-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* food shelf and toy shelf css */
+.shelf-container {
+    background-image: url('../pusheen/shelf.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 450px;
+    position: absolute;
+    left: 7%;
+    bottom: 5%;
+    display: none;
+    flex-direction: column;
+    padding: 40px;
+    z-index: 100;
+}
+
+.shelf-rows {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    margin-left: 20px;
+}
+
+.shelf-row {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    margin-top: 7px;
+}
+
+.food-item, .toy-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    width: 80px;
+    background: transparent;
+    padding: 5px;
+}
+
+.food-item:hover, .toy-item:hover {
+    transform: scale(1.1);
+}
+
+.food-item img, .toy-item img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
+.food-quantity {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    background: #333;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.food-item:hover::after, .toy-item:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+.food-item::after, .toy-item::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/*from here is the daily check in panel*/
+/* Modal Centered Popup */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Popup Box */
+.checkin-popup {
+    background-color: #fffaf0;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    max-width: 700px; /* Increased size for 7 days */
+    width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+/* Panel Container - NO SCROLL */
+.checkin-panel {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+    background-color: #fffaf0;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+/* Day Boxes */
+.day {
+    flex: 1 1 calc(14% - 10px); /* Fit 7 evenly with small gap */
+    max-width: 80px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px solid #f5d89c;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #5a3a1b;
+    font-weight: bold;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.day.grayed {
+    background-color: #d3d3d3; /* Gray color for past days */
+    border-color: #b0b0b0;
+}
+
+.day.today {
+    border-color: #f7b733;
+    background-color: #fce8b2; /* Orange for today */
+}
+
+.day.future {
+    background-color: #fff; /* White for future days */
+}
+
+/* Coin and Label */
+.coins {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.day-label {
+    font-size: 14px;
+}
+
+/* Buttons */
+.checkin-button {
+    background-color: #f5c36a;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #5a3a1b;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.checkin-button:hover {
+    background-color: #f2b94c;
+}
+
+.close-button {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: #f5c36a;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.highlight-action {
+    box-shadow: 0 0 12px 6px gold;
+    border: 2px solid gold;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.bubble-message {
+    position: absolute;
+    bottom: 55%;
+    right: 42%;
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: 2px solid #888;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    z-index: 10;
+    animation: fadeInOut 4s ease-in-out;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+
+/*message pop up for buy item*/
+
+.floating-message-top {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 1000;
+    animation: floatDown 2s ease forwards;
+    pointer-events: none;
+}
+
+@keyframes floatDown {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+}
