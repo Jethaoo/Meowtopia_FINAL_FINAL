@@ -118,7 +118,7 @@
                         <img src="pusheen/happy.png" alt="happy" style="width:70px; height: 65px ;">
                         <div class="level">
                             <div class="progress-fill health-bar" style="width: <%= petcat.getHappiness() %>%;"> 
-                                <span class="happiness-percentage" style="color:black; padding-left: 5px;"><%= petcat.getHappiness() %>%</span>
+                                <span class="happiness-percentage" style="color:black; padding-left: 5px; font-family: cursive;"><%= petcat.getHappiness() %>%</span>
                             </div>
                         </div>
                     </div>
@@ -126,13 +126,13 @@
                         <img src="pusheen/energyIcon.png" alt="energy" style="width:55px; height: 60px;">
                         <div class="level">
                             <div class="progress-fill energy-bar" style="width: <%= petcat.getHungriness() %>%;">
-                                <span class="energy-percentage" style="color:black; padding-left: 5px;"><%= petcat.getHungriness() %>%</span>
+                                <span class="energy-percentage" style="color:black; padding-left: 5px; font-family: cursive;"><%= petcat.getHungriness() %>%</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+            
             <!-- Pusheen gif showing-->
             <%
                String selectedGif;
@@ -154,6 +154,7 @@
                }
             %>
             <div id="mood-message" class="bubble-message" style="display: none;"></div>
+            
 
             <div style="position: absolute; bottom: 15%; display: flex; right: 30%; flex-direction: column; align-items: center;">
                 <div id="petting-countdown" style="font-size: 32px; font-weight: bold; color: white; display: none;"></div>

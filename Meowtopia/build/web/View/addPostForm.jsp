@@ -66,9 +66,9 @@
                                         <div class="row">
                                             <div class="form-group" style="width:100%;">
                                                 <label class="label" for="image">Upload Image:</label>
-                                                <input class="form-control" type="file" name="image" id="image" onchange="previewImage(event)" required>
+                                                <input class="form-control" type="file" name="image" id="image" onchange="validateAndPreviewImage(event)" accept="image/png,image/jpeg,image/gif" required>
                                                 <img id="preview" src="#" alt="Image Preview" style="display:none; max-width: 100%; height: auto; margin-top: 10px; border-radius: 10px;" />
-
+                                                <div id="imageError" class="text-danger" style="display:none; margin-top: 5px;"></div>
                                             </div>
                                             <div class="form-group" style="width:100%;">
                                                 <label class="label" for="desc">Description:</label>
@@ -98,19 +98,37 @@
 
 
         <script>
-            function previewImage(event) {
+            function validateAndPreviewImage(event) {
                 const input = event.target;
-                const reader = new FileReader();
-
-                reader.onload = function () {
-                    const dataURL = reader.result;
-                    const img = document.getElementById('preview');
-                    img.src = dataURL;
-                    img.style.display = 'block'; // Show the image once loaded
-                };
-
-                if (input.files && input.files[0]) {
-                    reader.readAsDataURL(input.files[0]);
+                const file = input.files[0];
+                const errorDiv = document.getElementById('imageError');
+                const submitButton = document.querySelector('input[type="submit"]');
+                const previewImg = document.getElementById('preview');
+                
+                // Reset error message and preview
+                errorDiv.style.display = 'none';
+                submitButton.disabled = false;
+                previewImg.style.display = 'none';
+                
+                if (file) {
+                    // Check file type
+                    const validTypes = ['image/png', 'image/jpeg', 'image/gif'];
+                    if (!validTypes.includes(file.type)) {
+                        errorDiv.textContent = 'Please select a valid image file (PNG, JPEG, or GIF)';
+                        errorDiv.style.display = 'block';
+                        input.value = ''; // Clear the file input
+                        submitButton.disabled = true;
+                        previewImg.src = '#'; // Clear the preview image source
+                        return;
+                    }
+                    
+                    // Preview the image
+                    const reader = new FileReader();
+                    reader.onload = function() {
+                        previewImg.src = reader.result;
+                        previewImg.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
                 }
             }
         </script>

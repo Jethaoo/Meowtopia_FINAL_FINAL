@@ -113,7 +113,7 @@
                                         boolean liked = pls.hasUserLikedPost(userEmail, post.getPostid());
                                     %>
                                     <% SimpleDateFormat sdf = new SimpleDateFormat("MMM dd yyyy"); %>
-                                    <div><a href="#">ON <%= sdf.format(post.getPostdate()) %></a></div>
+                                    <div><a href="">ON <%= sdf.format(post.getPostdate()) %></a></div>
                                     <div id="like-container-<%= post.getPostid() %>">
                                         <button
                                             class="meta-chat"
